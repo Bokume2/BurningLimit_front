@@ -1,0 +1,49 @@
+.button {
+  width: 284px;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  border-radius: 31px;
+  color: #3a2304;
+  background-color: #f4af4f;
+  font-family:
+    'Noto Sans JP',
+    'Hiragino Kaku Gothic ProN',
+    'Yu Gothic',
+    sans-serif;
+  font-size: 56px;
+  font-weight: 400;
+  letter-spacing: 0;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    transform 0.15s ease;
+}
+
+.button:hover:not(:disabled) {
+  background-color: #e8a13e;
+}
+
+.button:focus-visible {
+  outline: 3px solid #3a2304;
+  outline-offset: 4px;
+}
+
+.button:active:not(:disabled) {
+  background-color: #dc932f;
+  transform: scale(0.98);
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button {
+    transition: none;
+  }
+}
