@@ -1,4 +1,5 @@
 import { Link } from 'react-router'
+import { paths } from '../../../../app/router/paths'
 import HeaderLink from '../../atoms/HeaderLink/HeaderLink.tsx'
 import styles from './Header.module.css'
 
@@ -8,9 +9,9 @@ type NavItem = {
 }
 
 const NAV_ITEMS: NavItem[] = [
-  { label: 'ダッシュボード', path: '/dashboard' },
-  { label: 'カレンダー', path: '/calendar' },
-  { label: 'グループ', path: '/group' },
+  { label: 'ダッシュボード', path: paths.dashboard },
+  { label: 'カレンダー', path: paths.calendar },
+  { label: 'グループ', path: paths.group },
 ]
 
 export default function Header() {
