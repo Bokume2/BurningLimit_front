@@ -7,13 +7,9 @@
   padding: 0;
   border: none;
   border-radius: 31px;
-  color: #3a2304;
-  background-color: #f4af4f;
-  font-family:
-    'Noto Sans JP',
-    'Hiragino Kaku Gothic ProN',
-    'Yu Gothic',
-    sans-serif;
+  color: var(--color-primary-text);
+  background-color: var(--color-primary);
+  font-family: 'IBM Plex Sans JP', sans-serif;
   font-size: 56px;
   font-weight: 400;
   letter-spacing: 0;
@@ -24,16 +20,16 @@
 }
 
 .button:hover:not(:disabled) {
-  background-color: #e8a13e;
+  background-color: var(--color-primary-hover);
 }
 
 .button:focus-visible {
-  outline: 3px solid #3a2304;
+  outline: 3px solid var(--color-primary-text);
   outline-offset: 4px;
 }
 
 .button:active:not(:disabled) {
-  background-color: #dc932f;
+  background-color: var(--color-primary-active);
   transform: scale(0.98);
 }
 
