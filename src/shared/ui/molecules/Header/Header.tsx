@@ -1,4 +1,8 @@
-import { Link } from 'react-router'
+import { LogOut } from 'lucide-react'
+import { useState } from 'react'
+import { Link, useNavigate } from 'react-router'
+import { logout } from '../../../../features/auth/model/auth'
+import { useCurrentUser } from '../../../../features/auth/model/useCurrentUser'
 import HeaderLink from '../../atoms/HeaderLink/HeaderLink.tsx'
 import styles from './Header.module.css'
 
@@ -14,6 +18,20 @@ const NAV_ITEMS: NavItem[] = [
 ]
 
 export default function Header() {
+  const navigate = useNavigate()
+  const user = useCurrentUser()
+  const [isLoggingOut, setIsLoggingOut] = useState(false)
+
+  const handleLogout = async () => {
+    setIsLoggingOut(true)
+    try {
+      await logout()
+      navigate('/login')
+    } finally {
+      setIsLoggingOut(false)
+    }
+  }
+
   return (
     <header className={styles.header}>
       {/* ロゴ */}
@@ -34,11 +52,31 @@ export default function Header() {
         ))}
       </nav>
 
-      {/* ユーザーログイン部要改修 */}
       <div className={styles.avatarContainer}>
-        <Link to="/profile" className={styles.avatarLink} aria-label="プロフィールへ">
-          <div className={styles.avatarPlaceholder} />
-        </Link>
+        {user ? (
+          <>
+            <Link
+              to="/profile"
+              className={styles.avatarLink}
+              aria-label="プロフィールへ"
+            >
+              <div className={styles.avatarPlaceholder} />
+            </Link>
+            <button
+              className={styles.logoutButton}
+              type="button"
+              disabled={isLoggingOut}
+              onClick={handleLogout}
+            >
+              <LogOut aria-hidden="true" />
+              ログアウト
+            </button>
+          </>
+        ) : (
+          <Link className={styles.loginLink} to="/login">
+            ログイン
+          </Link>
+        )}
       </div>
     </header>
   )

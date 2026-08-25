@@ -2,6 +2,53 @@
 
 はじめてのハッカソン 2026 Summer作品のフロントエンド
 
+## ローカル環境
+
+### 必要なソフトウェア
+
+- Node.js 24
+- npm
+- 起動済みのバックエンド（`http://localhost:8080`）
+
+### Firebase設定
+
+Firebase ConsoleのAuthenticationで「メール/パスワード」と「Google」を有効にしてください。
+
+環境変数ファイルを作成し、対象のFirebase Webアプリの値を設定します。
+
+```bash
+cp .env.example .env.local
+```
+
+| 変数 | 説明 |
+| --- | --- |
+| `VITE_FIREBASE_API_KEY` | Firebase Web API Key |
+| `VITE_FIREBASE_AUTH_DOMAIN` | Firebase Auth domain |
+| `VITE_FIREBASE_PROJECT_ID` | Firebase Project ID |
+| `VITE_FIREBASE_APP_ID` | Firebase App ID（任意） |
+| `VITE_API_BASE_URL` | バックエンドAPIのベースURL。ローカルでは`/api` |
+
+`.env.local`には認証情報を含める可能性があるため、Gitへコミットしないでください。
+
+### 起動
+
+依存関係をインストールして開発サーバーを起動します。
+
+```bash
+npm install
+npm run dev
+```
+
+開発サーバーでは`/api`へのリクエストを`http://localhost:8080`へ転送します。ログインまたはアカウント作成に成功すると、Firebase IDトークンを付けてバックエンドの`GET /auth/me`を呼び出します。
+
+### 品質確認
+
+```bash
+npm run lint
+npm test
+npm run build
+```
+
 ## 開発ルール
 
 本プロジェクトでは、Issue駆動で開発を進めます。緊急対応などを除き、Issueが存在しない状態で開発を開始しないでください。
