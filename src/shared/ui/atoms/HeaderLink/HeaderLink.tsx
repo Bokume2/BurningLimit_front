@@ -1,4 +1,3 @@
-import React from 'react'
 import { NavLink, type NavLinkProps } from 'react-router-dom'
 import styles from './HeaderLink.module.css'
 
@@ -13,15 +12,15 @@ export default function HeaderLink({
   return (
     <NavLink
       to={to}
-      className={({ isActive, isPending }) => {
+      className={(renderProps) => {
         const customClassName =
           typeof className === 'function'
-            ? className({ isActive, isPending })
+            ? className(renderProps)
             : className
 
         return [
           styles.link,
-          isActive ? styles.active : '',
+          renderProps.isActive ? styles.active : '',
           customClassName,
         ]
           .filter(Boolean)

@@ -1,4 +1,3 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 import HeaderLink from '../../atoms/HeaderLink/HeaderLink.tsx'
 import styles from './Header.module.css'
