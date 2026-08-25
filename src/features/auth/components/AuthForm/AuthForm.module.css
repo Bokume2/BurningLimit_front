@@ -258,6 +258,28 @@
   text-align: center;
 }
 
+.errorMessage,
+.successMessage {
+  margin: -2px 0;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.errorMessage {
+  color: #b42318;
+}
+
+.successMessage {
+  color: #28713b;
+}
+
+.form button:disabled,
+.form input:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
 @media (max-width: 480px) {
   .heading {
     margin: 22px 0 20px;
