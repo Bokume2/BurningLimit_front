@@ -1,4 +1,4 @@
-import { NavLink, type NavLinkProps } from 'react-router-dom'
+import { NavLink, type NavLinkProps } from 'react-router'
 import styles from './HeaderLink.module.css'
 
 export type HeaderLinkProps = NavLinkProps
