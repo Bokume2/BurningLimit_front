@@ -66,6 +66,7 @@
 .avatarContainer {
   display: flex;
   align-items: center;
+  gap: 12px;
 }
 
 .avatarLink {
@@ -84,4 +85,37 @@
 
 .avatarLink:hover .avatarPlaceholder {
   opacity: 0.85;
+}
+
+.logoutButton,
+.loginLink {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 16px;
+  border: 1px solid #4a1805;
+  border-radius: 12px;
+  color: #4a1805;
+  background: #fff7e9;
+  font: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.logoutButton svg {
+  width: 18px;
+  height: 18px;
+}
+
+.logoutButton:hover:not(:disabled),
+.loginLink:hover {
+  background: #fff;
+}
+
+.logoutButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
 }
