@@ -1,0 +1,87 @@
+.header {
+  width: 100%;
+  height: 80px;
+  background-color: #f3a83b;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  box-sizing: border-box;
+  border-bottom: 2px solid #000000;
+}
+
+/* ロゴスタイル */
+.logoLink {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  outline-offset: 4px;
+}
+
+.logoText {
+  font-family: 'Brush Script MT', 'Caveat', cursive, sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  font-style: italic;
+  color: #4a1805;
+  user-select: none;
+  letter-spacing: 0.5px;
+}
+
+/* ナビゲーションコンテナ */
+.navContainer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-left: auto;
+  margin-right: 24px;
+}
+
+/* HeaderLink をヘッダーの高さに合わせてリサイズ・上書き */
+.navItem {
+  width: auto !important;
+  min-width: 140px;
+  height: 48px !important;
+  padding: 0 20px !important;
+  font-size: 18px !important;
+  font-weight: 500 !important;
+  border-radius: 12px !important;
+  background-color: #f6b75e !important;
+  color: #4a1805 !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.navItem:hover {
+  background-color: #f8c377 !important;
+}
+
+/* アクティブ時の色指定上書き */
+.navItem.active {
+  background-color: #f8c985 !important;
+  box-shadow: inset 0 2px 4px rgba(74, 24, 5, 0.15) !important;
+  font-weight: 700 !important;
+}
+
+/* アバター */
+.avatarContainer {
+  display: flex;
+  align-items: center;
+}
+
+.avatarLink {
+  display: block;
+  border-radius: 50%;
+  outline-offset: 4px;
+}
+
+.avatarPlaceholder {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #d1d5db;
+  transition: opacity 0.15s ease;
+}
+
+.avatarLink:hover .avatarPlaceholder {
+  opacity: 0.85;
+}
